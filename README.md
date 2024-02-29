@@ -1,2 +1,1 @@
-# Extract
-Information extraction from articles
+## [Artitract](https://aaronge-2020.github.io/Artitract/)
