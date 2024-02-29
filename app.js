@@ -200,7 +200,7 @@ $(document).ready(function () {
         // Clean text nodes by trimming whitespace
         if (child.nodeType === 3) {
           // Text node
-          child.nodeValue = child.nodeValue.replace(/\\n/g, "");
+          child.nodeValue = child.nodeValue.replace(/\\n/g, "").replace(/\\t/g, "");
           if (child.nodeValue === "") {
             child.parentNode.removeChild(child);
           }
