@@ -8,13 +8,7 @@ import {
 } from "https://esm.sh/langchain/prompts";
 import { JsonOutputFunctionsParser } from "https://esm.sh/langchain/output_parsers";
 
-const EXTRACTION_TEMPLATE = `Carefully read the provided HTML article and identify all of the requested fields. For each identified field, record 
-   and save the details in a structured format using the output_formatter function. 
-   Ensure to capture only those fields explicitly mentioned within the passage. The passage may not contain all the fields.
-   If a property is relevant but not explicitly stated or required by the task parameters, 
-   write "NA" for the answer and the source. For the source of each answer, ensure that you are taking the verbatim
-   quote in the article. Aim for completeness and accuracy in extracting and 
-   documenting the relevant information.`;
+const EXTRACTION_TEMPLATE = `Please thoroughly review the HTML article provided and locate and document all specified fields. Utilize the output_formatter function to organize and store the details of each identified field in a structured manner. Only include fields that are explicitly mentioned in the passage, disregarding any additional information not directly requested. If a field is pertinent but not explicitly stated or required, input "NA" as the response along with the source. When documenting each answer, ensure to quote the exact wording from the article. Strive for precision and thoroughness in extracting and recording the relevant data.`;
 
 function createZodSchema(fields, types, descriptions) {
   let schemaFields = {};

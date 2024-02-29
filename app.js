@@ -140,12 +140,35 @@ $(document).ready(function () {
 
       const cleanedHTML = displayArticle(article.content);
 
-      const extractedInformation = await extractInformationFromHTML(
+      let extractedInformation = await extractInformationFromHTML(
         cleanedHTML,
         fieldsToExtract,
         fieldsTypes,
         fieldsDescriptions
       );
+
+      extractedInformation = {
+        ...extractedInformation,
+        article_metadata: {
+          title: article.title,
+
+          description: article.description,
+
+          published: article.published,
+
+          type: article.type,
+
+          source: article.source,
+
+          url: article.url,
+
+          author: article.author,
+
+          links: article.links,
+
+          time_to_read: article.ttr,
+        },
+      };
 
       displayResults(extractedInformation);
     } catch (err) {
