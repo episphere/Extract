@@ -8,10 +8,9 @@ import {
 } from "https://esm.sh/langchain/prompts";
 import { JsonOutputFunctionsParser } from "https://esm.sh/langchain/output_parsers";
 
-const EXTRACTION_TEMPLATE = `Carefully read the provided HTML and identify all of the requested fields
-   along with their associated properties. For each identified field, record 
+const EXTRACTION_TEMPLATE = `Carefully read the provided HTML article and identify all of the requested fields. For each identified field, record 
    and save the details in a structured format using the output_formatter function. 
-   Ensure to capture only those fields explicitly mentioned or implied within the passage. 
+   Ensure to capture only those fields explicitly mentioned within the passage. The passage may not contain all the fields.
    If a property is relevant but not explicitly stated or required by the task parameters, 
    write "NA" for the answer and the source. For the source of each answer, ensure that you are taking the verbatim
    quote in the article. Aim for completeness and accuracy in extracting and 

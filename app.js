@@ -56,7 +56,7 @@ $(document).ready(function () {
   }
 
   // Initially add one input field
-  addInputField();
+  addInputField("Subject", "string", "Who the article is written about.");
 
   // Add button event to add more input fields
   $("#add-field").click(function (e) {
